@@ -11,7 +11,7 @@ react native 在flatlist上自定义一个下拉刷新
 ![avatar](https://images-pre.ylwx365.com/images/mini/69521603963768011.jpg)
 ![avatar](https://images-pre.ylwx365.com/images/mini/59521603963758548.jpg)
 
-主要用到了flatlist的onScrollBeginDrag、onScroll、onScrollEndDrag
+#### 主要用到了flatlist的onScrollBeginDrag、onScroll、onScrollEndDrag
 
 ##### 废话不多说直接上代码：
 ```python
@@ -40,10 +40,7 @@ class Page extends common {
     this.state = {
       pullRefreshing: 0, // 0-下拉加载 1-加载中 2-释放刷新
       list: [],
-      noMore: false,
-      // 图片预览
-      imageViewerIndex: -1,
-      resultShow: false,
+      noMore: false
     };
   }
 
