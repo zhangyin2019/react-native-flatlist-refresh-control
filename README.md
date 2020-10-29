@@ -1,19 +1,27 @@
 # react-native-flatlist-refresh-control
 react native 在flatlist上自定义一个下拉刷新
+React native customizes a drop-down refresh on flatlist
 
 初衷：自从更新版本到0.63.3，大量0.62.2之前的依赖都没法支持，或者报这种警告或者性能问题,官方的refreshControl都懂的，太难看且没法自定义，索性决定使用flatlist自己写一个下拉刷新，完全不依靠第三方，所以安卓和苹果都支持使用。
 
+Original intention: from the updated version to 0.63.3, a large number of dependencies before 0.62.2 can't be supported, or the official refreshControl knows this kind of warning or performance problem, which is too ugly and can't be customized, so it's decided to write a pull-down refresh by flatlist without relying on a third party at all, so Android and Apple both support it.
+
 欢迎广大RN友在Issues进行提问
+RN friends are welcome to ask questions on Issues
 
 效果如图：
+The following images:
 
 ![avatar](https://images-pre.ylwx365.com/images/mini/51661603963736513.jpg)
 ![avatar](https://images-pre.ylwx365.com/images/mini/69521603963768011.jpg)
 ![avatar](https://images-pre.ylwx365.com/images/mini/59521603963758548.jpg)
 
 #### 主要用到了flatlist的onScrollBeginDrag、onScroll、onScrollEndDrag，代码不多copy就可以用
+Mainly used onScrollBeginDrag、onScroll、onScrollEndDrag of FlatList
 
 ##### 废话不多说直接上代码：
+Source code:
+
 ```python
 import React from 'react';
 import {
