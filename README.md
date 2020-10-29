@@ -281,6 +281,7 @@ export default Page;
 
 ## 欢迎打赏
 一分钱也是源源不断技术的推动力
+
 Chinese friends welcome to reward, and foreign friends welcome to give me a star
 
 <img src="https://images-pre.ylwx365.com/images/mini/55961603964811471.jpg" alt="图片替换文本" width="200" />
