@@ -141,12 +141,10 @@ class Page extends common {
           showsVerticalScrollIndicator={false}
           onScrollBeginDrag={(e) => (this.scrollBeginDrag = true)}
           onScroll={(e) => {
-            let y = parseInt(e.nativeEvent.contentOffset.y);
-            this.scrollTop = y;
+            let y = (this.scrollTop = parseInt(e.nativeEvent.contentOffset.y));
 
             if (y <= this.refreshHeight) {
               if (this.scrollBeginDrag) {
-                console.log('scroll: ', y);
                 // 下拉状态变化
                 if (y < this.refreshTriggerTop) {
                   pullRefreshing != 2 && this.setState({pullRefreshing: 2});
