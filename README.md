@@ -11,7 +11,7 @@ react native 在flatlist上自定义一个下拉刷新
 ![avatar](https://images-pre.ylwx365.com/images/mini/69521603963768011.jpg)
 ![avatar](https://images-pre.ylwx365.com/images/mini/59521603963758548.jpg)
 
-#### 主要用到了flatlist的onScrollBeginDrag、onScroll、onScrollEndDrag
+#### 主要用到了flatlist的onScrollBeginDrag、onScroll、onScrollEndDrag，代码不多copy就可以用
 
 ##### 废话不多说直接上代码：
 ```python
