@@ -1,5 +1,5 @@
 # react-native-flatlist-refresh-control
-react native 在flatlist上自定义一个下拉刷新
+React native 在flatlist上自定义一个下拉刷新
 
 React native customizes a drop-down refresh on flatlist
 
