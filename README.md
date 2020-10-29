@@ -10,7 +10,8 @@ react native 在flatlist上自定义一个下拉刷新
 
 主要用到了flatlist的onScrollBeginDrag、onScroll、onScrollEndDrag
 
-废话不多说直接上代码：
+##### 废话不多说直接上代码：
+```python
 import React from 'react';
 import {
   FlatList,
@@ -264,3 +265,4 @@ class Page extends common {
 
 export default Page;
 
+```
