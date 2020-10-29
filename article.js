@@ -15,7 +15,7 @@ class Page extends common {
   last_id = 0;
   scrollTop = 0;
   refreshHeight = this.S_H;
-  refreshTriggerTop = this.refreshHeight * 0.9;
+  refreshTriggerTop = parseInt(this.refreshHeight * 0.9); // 触发下拉刷新的区域占比高
 
   constructor(props) {
     super(props);
@@ -112,15 +112,16 @@ class Page extends common {
           showsVerticalScrollIndicator={false}
           onScrollBeginDrag={(e) => (this.scrollBeginDrag = true)}
           onScroll={(e) => {
-            let y = e.nativeEvent.contentOffset.y;
+            let y = parseInt(e.nativeEvent.contentOffset.y);
             this.scrollTop = y;
 
-            if (this.scrollTop <= this.refreshHeight) {
+            if (y <= this.refreshHeight) {
               if (this.scrollBeginDrag) {
+                console.log('scroll: ', y);
                 // 下拉状态变化
-                if (this.scrollTop < this.refreshTriggerTop) {
+                if (y < this.refreshTriggerTop) {
                   pullRefreshing != 2 && this.setState({pullRefreshing: 2});
-                } else if (this.scrollTop == this.refreshTriggerTop) {
+                } else if (y == this.refreshTriggerTop) {
                   this.setState({pullRefreshing: 1});
                 } else {
                   pullRefreshing != 0 && this.setState({pullRefreshing: 0});
