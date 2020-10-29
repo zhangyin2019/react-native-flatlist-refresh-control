@@ -44,7 +44,7 @@ class Page extends common {
   last_id = 0;
   scrollTop = 0;
   refreshHeight = this.S_H;
-  refreshTriggerTop = this.refreshHeight * 0.9;
+  refreshTriggerTop = this.refreshHeight * 0.9; // 触发下拉刷新的区域占比高
 
   constructor(props) {
     super(props);
@@ -102,7 +102,7 @@ class Page extends common {
     if (noMore) return;
 
     FETCH({
-      url: 'http://php.mavshare.com/duitou/getArticle',
+      url: 'xxx',// xxx-自己的请求链接
       data: {last_id},
     }).then((res) => {
       let arr = res.data,
