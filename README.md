@@ -52,7 +52,7 @@ class Page extends common {
     this.state = {
       pullRefreshing: 0, // 0-下拉加载 1-加载中 2-释放刷新
       list: [],
-      noMore: false
+      noMore: false,
     };
   }
 
@@ -102,7 +102,7 @@ class Page extends common {
     if (noMore) return;
 
     FETCH({
-      url: 'xxx',// xxx-自己的请求链接
+      url: 'http://php.mavshare.com/duitou/getArticle',
       data: {last_id},
     }).then((res) => {
       let arr = res.data,
@@ -144,12 +144,12 @@ class Page extends common {
             let y = e.nativeEvent.contentOffset.y;
             this.scrollTop = y;
 
-            if (this.scrollTop <= this.refreshHeight) {
+            if (y <= this.refreshHeight) {
               if (this.scrollBeginDrag) {
                 // 下拉状态变化
-                if (this.scrollTop < this.refreshTriggerTop) {
+                if (y < this.refreshTriggerTop) {
                   pullRefreshing != 2 && this.setState({pullRefreshing: 2});
-                } else if (this.scrollTop == this.refreshTriggerTop) {
+                } else if (y == this.refreshTriggerTop) {
                   this.setState({pullRefreshing: 1});
                 } else {
                   pullRefreshing != 0 && this.setState({pullRefreshing: 0});
