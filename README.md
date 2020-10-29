@@ -102,7 +102,7 @@ class Page extends common {
     if (noMore) return;
 
     FETCH({
-      url: 'http://php.mavshare.com/duitou/getArticle',
+      url: 'xxx',// xxx-自己的请求链接
       data: {last_id},
     }).then((res) => {
       let arr = res.data,
