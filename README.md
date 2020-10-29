@@ -1,7 +1,8 @@
 # react-native-flatlist-refresh-control
 react native 在flatlist上自定义一个下拉刷新
 
-初衷：自从更新版本到0.63.3，大量之前的依赖都没法支持，所以决定自己写一个下拉刷新，完全不依靠第三方，所以安卓和苹果都支持
+初衷：自从更新版本到0.63.3，大量之前的依赖都没法支持，所以决定自己写一个下拉刷新，完全不依靠第三方，所以安卓和苹果都支持使用
+
 效果如图：
 
 ![avatar](https://images-pre.ylwx365.com/images/mini/51661603963736513.jpg)
@@ -266,3 +267,7 @@ class Page extends common {
 export default Page;
 
 ```
+
+#### 欢迎打赏
+一分钱也是源源不断技术的推动力
+![avatar](https://images-pre.ylwx365.com/images/mini/55961603964811471.jpg)
