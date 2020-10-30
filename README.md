@@ -64,7 +64,14 @@ class Page extends common {
 
       // 重新刷新
       let {list} = this.state;
-      if (!list.length) this.onRefresh();
+      if (!list.length) {
+        // 初始下拉刷新需要收回去
+        this?.FlatListRef.scrollToOffset({
+          offset: this.S_H * 1.5,
+          animated: false,
+        });
+        this.onRefresh();
+      }
 
       this.exitAppToast();
     });
@@ -73,24 +80,6 @@ class Page extends common {
   // 下拉刷新
   onRefresh() {
     this.getList(true);
-
-    this.scrollBeginDrag = true;
-    this?.FlatListRef.scrollToOffset({
-      offset: this.refreshTriggerTop,
-      animated: true,
-    });
-    setTimeout(() => {
-      // 不在刷新区域则不回弹
-      if (this.scrollTop <= this.refreshTriggerTop) {
-        this.FlatListRef.scrollToOffset({
-          offset: this.refreshHeight,
-          animated: true,
-        });
-      }
-      setTimeout(() => {
-        this.scrollBeginDrag = true;
-      }, 200);
-    }, 1500);
   }
 
   // 获取列表
@@ -169,12 +158,34 @@ class Page extends common {
           }}
           onScrollEndDrag={() => {
             this.scrollBeginDrag = false;
+
+            // 在刷新区域
             if (this.scrollTop <= this.refreshTriggerTop) {
               this.onRefresh();
+
+              // 弹到加载中位置
+              this.scrollBeginDrag = true;
+              this.FlatListRef.scrollToOffset({
+                offset: this.refreshTriggerTop,
+                animated: true,
+              });
+              setTimeout(() => {
+                // 触发刷新后，又离开刷新区域的不回弹
+                if (this.scrollTop <= this.refreshTriggerTop) {
+                  this.FlatListRef.scrollToOffset({
+                    offset: this.refreshHeight,
+                    animated: true,
+                  });
+                }
+                setTimeout(() => {
+                  this.scrollBeginDrag = true;
+                }, 200);
+              }, 1500);
             } else if (
               this.scrollTop > this.refreshTriggerTop &&
               this.scrollTop < this.refreshHeight
             ) {
+              // 未在刷新区域
               this.scrollBeginDrag = true;
               this.FlatListRef.scrollToOffset({
                 offset: this.refreshHeight,
