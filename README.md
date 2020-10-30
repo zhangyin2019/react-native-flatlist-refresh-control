@@ -8,6 +8,7 @@ React native customizes a drop-down refresh on flatlist
 Original intention: from the updated version to 0.63.3, a large number of dependencies before 0.62.2 can't be supported, or the official refreshControl knows this kind of warning or performance problem, which is too ugly and can't be customized, so it's decided to write a pull-down refresh by flatlist without relying on a third party at all, so Android and Apple both support it.
 
 欢迎广大RN友在Issues进行提问
+
 RN friends are welcome to ask questions on Issues
 
 效果如图：
