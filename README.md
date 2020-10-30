@@ -9,7 +9,7 @@ Original intention: from the updated version to 0.63.3, a large number of depend
 
 欢迎广大RN友在Issues进行提问
 
-RN friends are welcome to ask questions on Issues
+Welcome RN friends to ask questions on Issues
 
 效果如图：
 
