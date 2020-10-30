@@ -66,8 +66,8 @@ class Page extends common {
       let {list} = this.state;
       if (!list.length) {
         // 初始下拉刷新需要收回去
-        this?.FlatListRef.scrollToOffset({
-          offset: this.S_H * 1.5,
+        this?.FlatListRef?.scrollToOffset({
+          offset: this.S_H,
           animated: false,
         });
         this.onRefresh();
@@ -129,7 +129,7 @@ class Page extends common {
         <FlatList
           ref={(r) => (this.FlatListRef = r)}
           showsVerticalScrollIndicator={false}
-          onScrollBeginDrag={(e) => (this.scrollBeginDrag = true)}
+          onScrollBeginDrag={() => (this.scrollBeginDrag = true)}
           onScroll={(e) => {
             let y = (this.scrollTop = parseInt(e.nativeEvent.contentOffset.y));
 
@@ -218,7 +218,6 @@ class Page extends common {
                 </View>
               </View>
               <View style={{height: this.STATUSBAR_HEIGHT - 10}}></View>
-              {list.length ? null : <View style={{height: this.S_H}}></View>}
             </>
           }
           renderItem={({item, index: i}) => {
@@ -266,9 +265,12 @@ class Page extends common {
           enableFooterInfinite={false}
           ListFooterComponent={
             <View
-              style={{
-                paddingBottom: this.STATUSBAR_HEIGHT * 0.5,
-              }}>
+              style={[
+                {
+                  height: list.length ? 'auto' : this.S_H,
+                  paddingBottom: this.STATUSBAR_HEIGHT * 0.5,
+                },
+              ]}>
               <Text style={[_s.txt_cen, _s.col_999, _s.p_20_0]}>
                 {noMore
                   ? list.length
