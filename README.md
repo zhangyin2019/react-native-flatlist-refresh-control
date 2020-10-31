@@ -13,7 +13,7 @@ Welcome RN friends to ask questions on Issues
 
 效果如图：
 
-The following images:
+The following are examples of pictures:
 
 ![avatar](https://images-pre.ylwx365.com/images/mini/51661603963736513.jpg)
 ![avatar](https://images-pre.ylwx365.com/images/mini/69521603963768011.jpg)
